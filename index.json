@@ -30,6 +30,20 @@
                 "群管"
             ],
             "verified": true
+        },
+        {
+            "name": "report",
+            "display_name": "群报",
+            "version": "1.0.0",
+            "author": "Nekoe",
+            "description": "统计群里某天的发言排行。原来内置在主程序里，现在是可装卸的插件。",
+            "repo": "https://github.com/Mario9800/nekoe-plugins",
+            "path": "plugins/report",
+            "tags": [
+                "统计",
+                "群管"
+            ],
+            "verified": true
         }
     ]
 }
