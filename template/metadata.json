@@ -1,0 +1,14 @@
+{
+    "name": "my_plugin",
+    "display_name": "我的插件",
+    "version": "1.0.0",
+    "author": "你的名字",
+    "description": "一句话说明这个插件做什么",
+    "entry": "main.py",
+    "tags": [
+        "示例"
+    ],
+    "defaults": {
+        "my_reply": "默认回复内容"
+    }
+}
