@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "updated": "2026-10-04",
+    "market_name": "Nekoe 插件市场",
+    "note": "想收录自己的插件？改这个文件提 PR 就行。字段说明见 README。",
+    "plugins": [
+        {
+            "name": "hello",
+            "display_name": "打招呼",
+            "version": "1.0.1",
+            "author": "Nekoe",
+            "description": "示例插件：被 @ 时回一句问候。可以照这个改出自己的插件。",
+            "repo": "https://github.com/Mario9800/nekoe-plugins",
+            "path": "plugins/hello",
+            "tags": [
+                "示例"
+            ],
+            "verified": true
+        }
+    ]
+}
