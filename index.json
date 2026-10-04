@@ -44,6 +44,20 @@
                 "群管"
             ],
             "verified": true
+        },
+        {
+            "name": "sign",
+            "display_name": "签到积分",
+            "version": "1.0.0",
+            "author": "Nekoe",
+            "description": "每日签到拿积分、看排行、查自己的积分。原来内置在主程序里，现在是可装卸的插件。",
+            "repo": "https://github.com/Mario9800/nekoe-plugins",
+            "path": "plugins/sign",
+            "tags": [
+                "积分",
+                "群管"
+            ],
+            "verified": true
         }
     ]
 }
