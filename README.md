@@ -338,6 +338,9 @@ for kw in ("你好", "您好", "hi"):
     ctx.command(kw, "打招呼")(hello_handler)
 ```
 
+想支持**带参数**的（「查询游戏 鸣潮」），用 `prefix=True`，见
+[ctx 能力全表](#ctx-能力全表) 里的 `ctx.command`。
+
 ---
 
 ## `metadata.json` 完整字段
@@ -377,11 +380,34 @@ for kw in ("你好", "您好", "hi"):
 
 | 方法 | 说明 |
 |---|---|
-| `ctx.command(命令词, 说明="")` | 装饰器。`async def h(event, cmd)` → 返回 `True` 表示已处理 |
+| `ctx.command(命令词, 说明="", prefix=False)` | 装饰器。`async def h(event, cmd)` → 返回 `True` 表示已处理 |
 | `ctx.on_message()` | 装饰器。`async def h(event, text)` → 返回 `True` 吞掉这条消息 |
 | `ctx.register_config(标题, fields)` | 声明配置项。`fields` = `[[键, 标签, 类型], ...]`，类型：`bool` / `number` / `text` |
 | `ctx.register_page(id, 标题, html="")` | 插件自带管理页。页内 `<script>` 会执行 |
 | `ctx.register_api(路径, handler, methods=("GET",))` | 注册管理接口。handler 签名 `(request, body)`，可 async |
+
+**命令是精确匹配的。** 注册了 `"查询游戏"`，群里发「查询游戏 鸣潮」**不会触发** ——
+整条消息得一模一样。
+
+想让命令**带参数**，加 `prefix=True`：
+
+```python
+@ctx.command("查询游戏", "查资源", prefix=True)
+async def h(event, cmd):
+    arg = cmd[len("查询游戏"):].strip()   # 「查询游戏 鸣潮」→「鸣潮」
+    ...
+```
+
+`prefix=True` 时，匹配规则是：
+
+```
+✅ 查询游戏             ← 光命令词本身
+✅ 查询游戏 鸣潮         ← 命令词 + 空格 + 参数
+❌ 查询游戏鸣潮          ← 中间没空格，不匹配（避免误伤）
+❌ 帮我查询游戏          ← 不是从头开始的
+```
+
+**handler 收到的 `cmd` 永远是整条消息**，参数自己 `split` / 切片取。
 
 ### 收发消息
 
