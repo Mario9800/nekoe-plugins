@@ -58,6 +58,20 @@
                 "群管"
             ],
             "verified": true
+        },
+        {
+            "name": "wife",
+            "display_name": "今日老婆",
+            "version": "1.0.0",
+            "author": "Nekoe",
+            "description": "每天抽一个二次元老婆（带 AI 写的介绍和配图），可以用积分换。原来内置在主程序里，现在是可装卸的插件。",
+            "repo": "https://github.com/Mario9800/nekoe-plugins",
+            "path": "plugins/wife",
+            "tags": [
+                "娱乐",
+                "积分"
+            ],
+            "verified": true
         }
     ]
 }
