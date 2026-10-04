@@ -72,6 +72,21 @@
                 "积分"
             ],
             "verified": true
+        },
+        {
+            "name": "autoreply",
+            "display_name": "关键词回复",
+            "version": "1.0.0",
+            "author": "Nekoe",
+            "description": "关键词自动回复，带命中统计和自带管理页。照着它就能写自己的插件。",
+            "repo": "https://github.com/Mario9800/nekoe-plugins",
+            "path": "plugins/autoreply",
+            "tags": [
+                "工具",
+                "群管",
+                "示例"
+            ],
+            "verified": true
         }
     ]
 }
